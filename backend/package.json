@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@stoqey/finnhub": "^0.3.4",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "finnhub": "^1.2.16"
   },

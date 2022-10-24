@@ -4,9 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+require("dotenv").config();
 const finnhub = require('finnhub');
 const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-api_key.apiKey = "cdbh53aad3ibgg4mo010cdbh53aad3ibgg4mo01g";
+api_key.apiKey = process.env.API_KEY;
 const finnhubClient = new finnhub.DefaultApi();
 const app = (0, express_1.default)();
 const PORT = 3000;
