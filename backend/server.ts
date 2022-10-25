@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.get('/general', (req, res) => {
     finnhubClient.marketNews("general", {}, (error: any, data: any, response: any) => {
         //res.send(data[0]["headline"] + "<br>" + data[0]["summary"])
-        res.send(data)
+        res.json(data[0])
       });
 }) 
 
@@ -46,6 +46,9 @@ app.get('/realtimeTrades', (req, res) => {
         socket.send(JSON.stringify({'type':'unsubscribe','symbol': symbol}))
     }
 }) 
+
+
+
   
 // Server setup
 app.listen(PORT,() => {

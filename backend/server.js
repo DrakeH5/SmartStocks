@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 app.get('/general', (req, res) => {
     finnhubClient.marketNews("general", {}, (error, data, response) => {
         //res.send(data[0]["headline"] + "<br>" + data[0]["summary"])
-        res.send(data);
+        res.json(data[0]);
     });
 });
 app.get('/realtimeTrades', (req, res) => {
