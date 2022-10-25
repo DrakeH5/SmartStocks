@@ -17,11 +17,14 @@ const PORT = 3000;
 app.get('/', (req, res) => {
     res.send('Welcome to typescript backend!');
 });
+let generalData;
+finnhubClient.marketNews("general", {}, (error, data, response) => {
+    //res.send(data[0]["headline"] + "<br>" + data[0]["summary"])
+    console.log(data);
+    generalData = data;
+});
 app.get('/general', (req, res) => {
-    finnhubClient.marketNews("general", {}, (error, data, response) => {
-        //res.send(data[0]["headline"] + "<br>" + data[0]["summary"])
-        res.json(data[0]);
-    });
+    res.send(generalData);
 });
 app.get('/realtimeTrades', (req, res) => {
     // Connection opened -> Subscribe

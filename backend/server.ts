@@ -1,3 +1,4 @@
+import { resolveSoa } from 'dns';
 import express from 'express';
 
 require("dotenv").config()
@@ -14,17 +15,23 @@ const socket = new WebSocket('wss://ws.finnhub.io?token='+process.env.API_KEY);
   
 const app = express();
 const PORT:Number=3000;
+
+
   
 // Handling GET / Request
 app.get('/', (req, res) => {
     res.send('Welcome to typescript backend!');
 }) 
 
-app.get('/general', (req, res) => {
+
+let generalData: any;
     finnhubClient.marketNews("general", {}, (error: any, data: any, response: any) => {
         //res.send(data[0]["headline"] + "<br>" + data[0]["summary"])
-        res.json(data[0])
-      });
+        console.log(data)
+        generalData = data
+    });
+app.get('/general', (req, res) => {
+    res.send(generalData)
 }) 
 
 
