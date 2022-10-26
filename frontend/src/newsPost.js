@@ -8,7 +8,7 @@ function NewsPost({summary, title, date, link}) {
     borderRadius: "15px 50px 30px",
   }
   const dateStyle = {
-    color: "#83EEFF",
+    color: "red",
     position: "absolute",
     right: "1.2em",
   }
@@ -19,7 +19,7 @@ function NewsPost({summary, title, date, link}) {
       <div style={style}>
         <p style={dateStyle}>{time}</p>
         <h2>{title}</h2>
-        <p style={{color: "white"}}>{summary}</p>
+        <p style={{color: "#83EEFF"}}>{summary}</p>
       </div>
     </a>
   );
