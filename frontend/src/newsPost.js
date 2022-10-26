@@ -2,7 +2,7 @@ function NewsPost({summary, title, date, link}) {
   const style = {
     //backgroundColor: "#16003B",
     backgroundColor: "#413F42",
-    color: "#F73D93",
+    color: "lightgreen",
     margin: "0.75em",
     padding: "1em",
     borderRadius: "15px 50px 30px",
@@ -11,7 +11,6 @@ function NewsPost({summary, title, date, link}) {
     color: "#83EEFF",
     position: "absolute",
     right: "1.2em",
-    paddingBottom: "3em",
   }
   var time = new Date(date*1000)
   time = time.toLocaleString()
