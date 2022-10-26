@@ -9,8 +9,8 @@ function NewsPost({summary, title, date, link}) {
   }
   const dateStyle = {
     color: "red",
-    position: "absolute",
-    right: "1.2em",
+    textAlign: "right",
+    margin: "1em"
   }
   var time = new Date(date*1000)
   time = time.toLocaleString()
