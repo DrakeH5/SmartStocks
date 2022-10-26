@@ -1,15 +1,17 @@
 function NewsPost({summary, title, date, link}) {
   const style = {
-    backgroundColor: "#16003B",
+    //backgroundColor: "#16003B",
+    backgroundColor: "#413F42",
     color: "#F73D93",
-    margin: "5em",
-    padding: "2em",
+    margin: "0.75em",
+    padding: "1em",
     borderRadius: "15px 50px 30px",
-    background: "#16003B",
   }
   const dateStyle = {
     color: "#83EEFF",
-    textAlign: "right",
+    position: "absolute",
+    right: "1.2em",
+    paddingBottom: "3em",
   }
   var time = new Date(date*1000)
   time = time.toLocaleString()
@@ -18,7 +20,7 @@ function NewsPost({summary, title, date, link}) {
       <div style={style}>
         <p style={dateStyle}>{time}</p>
         <h2>{title}</h2>
-        <p>{summary}</p>
+        <p style={{color: "white"}}>{summary}</p>
       </div>
     </a>
   );

@@ -2,7 +2,7 @@ import './App.css';
 import NewsFeed from "./newsfeed.js"
 
 function App() {
-  document.body.style.backgroundImage = "linear-gradient(to bottom right, #413F42, #7F8487)"
+  document.body.style.backgroundImage = "linear-gradient(to bottom right, black, #413F42)"
   return (
     <div>
       <NewsFeed></NewsFeed>
