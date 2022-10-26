@@ -19,7 +19,7 @@ function NewsFeed() {
 
     return(
         articles.map(news => {
-            return <NewsPost key={news["id"]} summary={news["summary"]} />
+            return <NewsPost key={news["id"]} summary={news["summary"]} title={news["headline"]} date={news["datetime"]} link={news["url"]} />
         })
   );
 }
