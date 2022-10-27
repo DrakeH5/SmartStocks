@@ -22,7 +22,7 @@ function QualitativePage() {
           <NavLink activeClassName="active" to="currentLegislature"><button style={buttonStyle}>Current Legislature</button></NavLink>
         </div>
         <Routes>
-          <Route path="/news" element={<NewsFeed />}></Route>
+          <Route path="/news" element={<div style={{marginTop: "6.5em"}}><NewsFeed /></div>}></Route>
         </Routes>
       </div>
     );
