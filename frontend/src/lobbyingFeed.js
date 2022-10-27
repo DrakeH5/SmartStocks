@@ -3,10 +3,21 @@ import React, { useEffect, useState } from "react"
 
 function LobbyingFeed() {
 
+    var reqOptions = {
+        method: 'post',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+             "symbol": "APPL"
+        })
+    }
+
     const [articles, setArticles] = useState([{}])
 
     useEffect(() => {
-        fetch("/lobbying").then(
+        fetch("/lobbying", {
+            method: 'post',
+            headers: {'Content-Type':'application/json', "symbol":"AAPL"},
+        }).then(
           response => response.json()
         ).then(
           data => {

@@ -26,8 +26,10 @@ finnhubClient.marketNews("general", {}, (error, data, response) => {
 app.get('/general', (req, res) => {
     res.send(generalData);
 });
-app.get('/lobbying', (req, res) => {
-    finnhubClient.stockLobbying("AAPL", "2020-01-01", "2022-05-01", (error, data, response) => {
+app.post('/lobbying', (req, res) => {
+    var symbol = req.headers["symbol"];
+    console.log(symbol);
+    finnhubClient.stockLobbying(symbol, "2020-01-01", "2022-05-01", (error, data, response) => {
         res.send(data);
     });
 });
