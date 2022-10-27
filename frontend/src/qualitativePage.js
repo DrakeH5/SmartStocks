@@ -1,6 +1,7 @@
 import NewsFeed from "./newsfeed.js";
 import { NavLink, Routes, Route } from 'react-router-dom';
 import "./subSectionChoiceCss.css";
+import LobbyingFeed from "./lobbyingFeed.js";
 
 function QualitativePage() {
   const mainStyle = {
@@ -27,10 +28,11 @@ function QualitativePage() {
           <NavLink activeClassName="active" to="news"><button style={buttonStyle}>News</button></NavLink>
           <NavLink activeClassName="active" to="mediaSentiment"><button style={buttonStyle}>Media Sentiment</button></NavLink>
           <NavLink activeClassName="active" to="socialSentiment"><button style={buttonStyle}>Social Sentiment</button></NavLink>
-          <NavLink activeClassName="active" to="currentLegislature"><button style={buttonStyle}>Current Legislature</button></NavLink>
+          <NavLink activeClassName="active" to="currentLobbying"><button style={buttonStyle}>Current Lobbying</button></NavLink>
         </div>
         <Routes>
-          <Route path="/news" element={<div style={{marginTop: "6.5em"}}><NewsFeed /></div>}></Route>
+        <Route path="/news" element={<div style={{marginTop: "6.5em"}}><NewsFeed /></div>}></Route>
+        <Route path="/currentLobbying" element={<div style={{marginTop: "6.5em"}}><LobbyingFeed /></div>}></Route>
         </Routes>
       </div>
     );
