@@ -11,7 +11,15 @@ function QualitativePage() {
     padding: "0.5em",
   }
   const buttonStyle = {
-   opacity: "0.5"
+    border: "2px solid black",
+    borderRadius: "5px",
+    backgroundColor: "rgba(0,0,0,0.1)",
+    color: "lightgreen",
+    fontSize: "16px",
+    cursor: "pointer",
+    borderColor: "#04AA6D",
+    margin: "0.1em"
+   
   }
     return (
       <div>
