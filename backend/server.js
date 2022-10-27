@@ -26,6 +26,11 @@ finnhubClient.marketNews("general", {}, (error, data, response) => {
 app.get('/general', (req, res) => {
     res.send(generalData);
 });
+app.get('/lobbying', (req, res) => {
+    finnhubClient.stockLobbying("AAPL", "2020-01-01", "2022-05-01", (error, data, response) => {
+        res.send(data);
+    });
+});
 app.get('/realtimeTrades', (req, res) => {
     // Connection opened -> Subscribe
     socket.addEventListener('open', function (event) {

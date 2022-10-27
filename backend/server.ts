@@ -35,6 +35,16 @@ app.get('/general', (req, res) => {
 }) 
 
 
+app.get('/lobbying', (req, res) => {
+    finnhubClient.stockLobbying("AAPL", "2020-01-01", "2022-05-01", (error: any, data: any, response: any) => {
+        res.send(data)
+    });
+}) 
+
+
+
+
+
 app.get('/realtimeTrades', (req, res) => {
     // Connection opened -> Subscribe
     socket.addEventListener('open', function (event: any) {
