@@ -38,7 +38,10 @@ app.get('/general', (req, res) => {
 app.post('/lobbying', (req, res) => {
     var symbol = req.headers["symbol"]
     console.log(symbol)
-    finnhubClient.stockLobbying(symbol, "2020-01-01", "2022-05-01", (error: any, data: any, response: any) => {
+    var date = new Date()
+    var fromDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(); 
+    var toDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate(); 
+    finnhubClient.stockLobbying(symbol, fromDate, toDate, (error: any, data: any, response: any) => {
         res.send(data)
     });
 }) 
