@@ -47,6 +47,13 @@ app.post('/lobbying', (req, res) => {
 }) 
 
 
+app.post('/socialSentiment', (req, res) => {
+    var symbol = req.headers["symbol"]
+    finnhubClient.socialSentiment(symbol, (error: any, data: any, response: any) => {
+        res.send(data);
+      });
+}) 
+
 
 
 

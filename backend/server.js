@@ -36,6 +36,12 @@ app.post('/lobbying', (req, res) => {
         res.send(data);
     });
 });
+app.post('/socialSentiment', (req, res) => {
+    var symbol = req.headers["symbol"];
+    finnhubClient.socialSentiment(symbol, (error, data, response) => {
+        res.send(data);
+    });
+});
 app.get('/realtimeTrades', (req, res) => {
     // Connection opened -> Subscribe
     socket.addEventListener('open', function (event) {
