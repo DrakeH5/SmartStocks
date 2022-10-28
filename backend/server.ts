@@ -55,6 +55,18 @@ app.post('/socialSentiment', (req, res) => {
       });
 }) 
 
+app.post('/insiderSentiment', (req, res) => {
+    var symbol = req.headers["symbol"]
+    console.log(symbol)
+    var date = new Date()
+    var fromDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate(); 
+    var toDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate(); var symbol = req.headers["symbol"]
+    console.log(symbol)
+    finnhubClient.insiderSentiment(symbol, fromDate, toDate, (error: any, data: any, response: any) => {
+        res.send(data);
+      });
+}) 
+
 
 
 

@@ -36,10 +36,22 @@ app.post('/lobbying', (req, res) => {
         res.send(data);
     });
 });
-app.get('/socialSentiment', (req, res) => {
+app.post('/socialSentiment', (req, res) => {
     var symbol = req.headers["symbol"];
     console.log(symbol);
-    finnhubClient.socialSentiment("GME", (error, data, response) => {
+    finnhubClient.socialSentiment(symbol, (error, data, response) => {
+        res.send(data);
+    });
+});
+app.post('/insiderSentiment', (req, res) => {
+    var symbol = req.headers["symbol"];
+    console.log(symbol);
+    var date = new Date();
+    var fromDate = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+    var toDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+    var symbol = req.headers["symbol"];
+    console.log(symbol);
+    finnhubClient.insiderSentiment(symbol, fromDate, toDate, (error, data, response) => {
         res.send(data);
     });
 });
