@@ -3,6 +3,7 @@ import { NavLink, Routes, Route } from 'react-router-dom';
 import "./subSectionChoiceCss.css";
 import LobbyingFeed from "./lobbyingFeed.js";
 import SocialSentimentFeed from "./socialSentimentFeed.js";
+import InsiderSentimentFeed from "./insiderSentimentFeed.js";
 
 
 function QualitativePage() {
@@ -29,14 +30,15 @@ function QualitativePage() {
       <div>
         <div style={mainStyle}>
           <NavLink activeClassName="active" to="news"><button style={buttonStyle}>News</button></NavLink>
-          <NavLink activeClassName="active" to="mediaSentiment"><button style={buttonStyle}>Media Sentiment</button></NavLink>
-          <NavLink activeClassName="active" to="socialSentiment"><button style={buttonStyle}>Social Sentiment</button></NavLink>
+          <NavLink activeClassName="active" to="insiderSentiment"><button style={buttonStyle}>Insider Sentiment</button></NavLink>
+          <NavLink activeClassName="active" to="socialSentiment"><button style={buttonStyle}>Media Sentiment</button></NavLink>
           <NavLink activeClassName="active" to="currentLobbying"><button style={buttonStyle}>Current Lobbying</button></NavLink>
         </div>
         <Routes>
         <Route path="/news" element={<div style={{marginTop: "9.2em"}}><NewsFeed /></div>}></Route>
         <Route path="/currentLobbying" element={<div style={{marginTop: "9.2em"}}><LobbyingFeed /></div>}></Route>
         <Route path="/socialSentiment" element={<div style={{marginTop: "9.2em"}}><SocialSentimentFeed /></div>}></Route>
+        <Route path="/insiderSentiment" element={<div style={{marginTop: "9.2em"}}><InsiderSentimentFeed /></div>}></Route>
         </Routes>
       </div>
     );
