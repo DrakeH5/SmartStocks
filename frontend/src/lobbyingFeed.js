@@ -3,20 +3,12 @@ import React, { useEffect, useState } from "react"
 
 function LobbyingFeed() {
 
-    var reqOptions = {
-        method: 'post',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({
-             "symbol": "APPL"
-        })
-    }
-
     const [articles, setArticles] = useState([{}])
 
     useEffect(() => {
         fetch("/lobbying", {
             method: 'post',
-            headers: {'Content-Type':'application/json', "symbol":"AAPL"},
+            headers: {'Content-Type':'application/json', "symbol":prompt("Symbol: ")},
         }).then(
           response => response.json()
         ).then(
@@ -27,15 +19,14 @@ function LobbyingFeed() {
         }
       )
     }, [])
-    console.log(articles)
+
     if(articles[0]["data"]){
         var posts = articles[0]["data"]
-    
-    return(
-        posts.map(news => {
-            return <LobbyingPost key={news["clientId"]} description={news["description"]} documentUrl={news["documentUrl"]} name={news["name"]} period={news["period"]} symbol={news["symbol"]} year={news["year"]} />
-        })
-  );
+        return(
+            posts.map(news => {
+                return <LobbyingPost key={news["clientId"]} description={news["description"]} documentUrl={news["documentUrl"]} name={news["name"]} period={news["period"]} symbol={news["symbol"]} year={news["year"]} />
+            })
+        );
     }
 }
 

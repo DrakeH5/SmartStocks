@@ -3,6 +3,7 @@ import { NavLink, Routes, Route } from 'react-router-dom';
 import "./subSectionChoiceCss.css";
 import LobbyingFeed from "./lobbyingFeed.js";
 
+
 function QualitativePage() {
   const mainStyle = {
     backgroundColor: "grey",
@@ -10,6 +11,7 @@ function QualitativePage() {
     top: "5.2em",
     width: "100%",
     padding: "0.5em",
+    height: "3em"
   }
   const buttonStyle = {
     border: "2px solid black",
@@ -32,7 +34,7 @@ function QualitativePage() {
         </div>
         <Routes>
         <Route path="/news" element={<div style={{marginTop: "6.5em"}}><NewsFeed /></div>}></Route>
-        <Route path="/currentLobbying" element={<div style={{marginTop: "6.5em"}}><LobbyingFeed /></div>}></Route>
+        <Route path="/currentLobbying" element={<div style={{marginTop: "9.2em"}}><LobbyingFeed /></div>}></Route>
         </Routes>
       </div>
     );
