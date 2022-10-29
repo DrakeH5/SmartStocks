@@ -3,6 +3,7 @@ import QualitativePage from "./qualitativePage.js";
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import TopNavBar from "./topNavBar.js";
 import React from 'react';
+import Quantitative from "./quantitativePage.js";
 
 function App() {
   document.body.style.backgroundImage = "linear-gradient(to bottom right, black, #413F42)"
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<h1>HOME</h1>}></Route>
           <Route exact path="/qualitative/*" element={<QualitativePage />}></Route>
-          <Route exact path="/quantitative/*" element={<h1>Quantitative</h1>}></Route>
+          <Route exact path="/quantitative/*" element={<Quantitative />}></Route>
           <Route exact path="/recomendations/*" element={<h1>Recs</h1>}></Route>
         </Routes>
       </BrowserRouter>
