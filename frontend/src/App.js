@@ -2,6 +2,7 @@ import './App.css';
 import QualitativePage from "./qualitativePage.js";
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import TopNavBar from "./topNavBar.js";
+import React from 'react';
 
 function App() {
   document.body.style.backgroundImage = "linear-gradient(to bottom right, black, #413F42)"

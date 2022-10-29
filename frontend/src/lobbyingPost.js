@@ -1,3 +1,4 @@
+import React from 'react';
 function LobbyingPost({description,documentUrl,name,period,symbol,year}) {
     const style = {
       //backgroundColor: "#16003B",
@@ -6,7 +7,7 @@ function LobbyingPost({description,documentUrl,name,period,symbol,year}) {
       margin: "0.75em",
       padding: "1em",
       borderRadius: "15px 50px 30px",
-    }
+    } 
     const rightStyle = {
         position: "absolute",
         right: "2em",

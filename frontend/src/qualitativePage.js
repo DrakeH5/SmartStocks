@@ -4,7 +4,7 @@ import "./subSectionChoiceCss.css";
 import LobbyingFeed from "./lobbyingFeed.js";
 import SocialSentimentFeed from "./socialSentimentFeed.js";
 import InsiderSentimentFeed from "./insiderSentimentFeed.js";
-
+import React from 'react';
 
 function QualitativePage() {
   const mainStyle = {

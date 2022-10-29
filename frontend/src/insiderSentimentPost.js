@@ -1,3 +1,4 @@
+import React from 'react';
 function InsiderSentimentPost({symbol, year, month, change, msrp}) {
     const style = {
       //backgroundColor: "#16003B",

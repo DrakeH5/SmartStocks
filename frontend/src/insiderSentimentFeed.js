@@ -29,6 +29,7 @@ function InsiderSentimentFeed() {
             })
         );
     }
-}
+} 
 
 export default InsiderSentimentFeed;
+ 

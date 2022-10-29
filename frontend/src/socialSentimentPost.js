@@ -1,3 +1,4 @@
+import React from 'react';
 function SocialSentimentPost({description,documentUrl,name,period,symbol,year}) {
     const style = {
       //backgroundColor: "#16003B",

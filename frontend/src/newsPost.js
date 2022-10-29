@@ -1,3 +1,4 @@
+import React from 'react';
 function NewsPost({summary, title, date, link, img}) {
   const style = {
     //backgroundColor: "#16003B",

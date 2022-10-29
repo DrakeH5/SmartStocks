@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DrakeH5/SmartStocks/issues"
   },
-  "homepage": "https://github.com/DrakeH5/SmartStocks#readme"
+  "homepage": "https://github.com/DrakeH5/SmartStocks#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
 }
