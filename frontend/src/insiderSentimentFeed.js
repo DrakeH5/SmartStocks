@@ -1,5 +1,6 @@
-import InsiderSentimentPost from "./insiderSentimentPost.js"
 import React, { useEffect, useState } from "react"
+import Chart from "chart.js/auto";
+import { Line } from "react-chartjs-2";
 
 function InsiderSentimentFeed() {
 
@@ -19,14 +20,52 @@ function InsiderSentimentFeed() {
         }
       )
     }, [])
-    console.log(posts)
+  
+
     if(articles[0]["data"]){
         var posts = articles[0]["data"]
+
+        var labels = []
+        var values = []
+        var msprs = []
+
+        posts.map(news => {
+          labels.push(news["year"]+"/"+news["month"])
+          values.push(news["change"])
+          msprs.push(news["mspr"])
+        })
+
+        const data = {
+          labels: labels,
+          datasets: [
+            {
+              label: "Changes",
+              backgroundColor: "red",
+              borderColor: "green",
+              data: values,
+            },
+          ],
+        };
+
+        const msprData = {
+          labels: labels,
+          datasets: [
+            {
+              label: "MSPRs",
+              backgroundColor: "green",
+              borderColor: "red",
+              data: msprs,
+            },
+          ],
+        };
+        
+
         
         return(
-            posts.map(news => {
-                return <InsiderSentimentPost key={news["change"]} symbol={news["symbol"]} year={news["year"]} month={news["month"]} change={news["change"]} msrp={news["msrp"]} />
-            })
+          <div style={{backgroundColor: "#413F42"}}>
+            <Line data={data}/>
+            <Line data={msprData}/>
+          </div>
         );
     }
 } 
