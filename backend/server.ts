@@ -77,6 +77,15 @@ app.post('/quote', (req, res) => {
 }) 
 
 
+app.post('/companyProfile', (req, res) => {
+    var symbol = req.headers["symbol"]
+    console.log(symbol)
+    finnhubClient.companyProfile2({'symbol': symbol}, (error: any, data: any, response: any) => {
+        res.send(data);
+      });
+}) 
+
+
 
 
 app.get('/realtimeTrades', (req, res) => {

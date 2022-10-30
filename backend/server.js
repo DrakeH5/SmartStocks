@@ -62,6 +62,13 @@ app.post('/quote', (req, res) => {
         res.send(data);
     });
 });
+app.post('/companyProfile', (req, res) => {
+    var symbol = req.headers["symbol"];
+    console.log(symbol);
+    finnhubClient.companyProfile2({ 'symbol': symbol }, (error, data, response) => {
+        res.send(data);
+    });
+});
 app.get('/realtimeTrades', (req, res) => {
     // Connection opened -> Subscribe
     socket.addEventListener('open', function (event) {
