@@ -47,9 +47,25 @@ function Quotes() {
         };
 
         return(
-            <div>
+            <div style={{color: color}}>
                 <center>
-                    <h1 style={{color: color}}>{quote["c"]}</h1>
+                    <h1>{quote["c"]}</h1>
+                    <h3>
+                        <div id="change">
+                            Change: {quote["d"]}
+                            <br></br>
+                            Percent Change: {quote["dp"]}%
+                        </div>
+                        <div id="high/low">
+                            <font color="lightgreen">High: {quote["h"]}</font>
+
+                            <font color="red" style={{paddingLeft: "2em"}}>Low: {quote["l"]}</font>
+                        </div>
+                        <div id="change" style={{color: "lightgrey"}}>
+                            Previous Close: {quote["pc"]}
+                            <span style={{paddingLeft: "2em"}}>Open: {quote["o"]}</span>
+                        </div>
+                    </h3>
                 </center>
                 <Line data={data} />
             </div>
