@@ -30,9 +30,9 @@ function TopNavBar() {
  }
   return (
     <div style={mainStyle}>
-        <Link to="/quantitative"  onClick={alterColor1}><center><img id="quantitative" src="./icons/quantitative.png" style={{backgroundColor: "red", display: "content", position: "relative", top: "0.5em"}}></img></center></Link>
-        <Link to="/qualitative"  onClick={alterColor2}><img id="qualitative" src="./icons/qualitative.png" style={{position: "absolute", left: "1.5em", top: "0.5em", backgroundColor: "red"}}></img></Link>
-        <Link to="/recomendations"  onClick={alterColor3}><img id="recomendations" src="./icons/recomendation.png" style={{position: "absolute", right: "1.5em", top:"0.5em", backgroundColor: "red"}}></img></Link>
+        <Link to="/quantitative"  onClick={alterColor1}><center><img id="quantitative" src="./icons/quantitative.png" alt="Quantitative" style={{backgroundColor: "red", display: "content", position: "relative", top: "0.5em"}}></img></center></Link>
+        <Link to="/qualitative"  onClick={alterColor2}><img id="qualitative" src="./icons/qualitative.png" alt="Qualitative" style={{position: "absolute", left: "1.5em", top: "0.5em", backgroundColor: "red"}}></img></Link>
+        <Link to="/recomendations"  onClick={alterColor3}><img id="recomendations" src="./icons/recomendation.png" alt="Recomendations" style={{position: "absolute", right: "1.5em", top:"0.5em", backgroundColor: "red"}}></img></Link>
     </div>
   );
 }
