@@ -4,6 +4,7 @@ import "./subSectionChoiceCss.css";
 import React from 'react';
 import Quotes from './quotes.js';
 import CompanyProfile from './companyProfile.js';
+import UsBudget from './usBudget.js';
 
 function QualitativePage() {
   const mainStyle = {
@@ -34,7 +35,7 @@ function QualitativePage() {
         <Routes>
             <Route path="/quotes" element={<div style={{marginTop: "9.2em"}}><Quotes /></div>}></Route>
             <Route path="/compInfo" element={<div style={{marginTop: "9.2em"}}><CompanyProfile /></div>}></Route>
-            <Route path="/govBudget" element={<div style={{marginTop: "9.2em"}}></div>}></Route> 
+            <Route path="/govBudget" element={<div style={{marginTop: "9.2em"}}><UsBudget /></div>}></Route> 
         </Routes>
       </div>
     );
