@@ -45,8 +45,12 @@ function Quotes() {
             },
           ],
         };
+
         return(
             <div>
+                <center>
+                    <h1 style={{color: color}}>{quote["c"]}</h1>
+                </center>
                 <Line data={data} />
             </div>
         );
