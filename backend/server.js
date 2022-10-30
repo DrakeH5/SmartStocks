@@ -69,21 +69,16 @@ app.post('/companyProfile', (req, res) => {
         res.send(data);
     });
 });
-app.get('/realtimeTrades', (req, res) => {
-    // Connection opened -> Subscribe
-    socket.addEventListener('open', function (event) {
-        socket.send(JSON.stringify({ 'type': 'subscribe', 'symbol': 'AAPL' }));
-        socket.send(JSON.stringify({ 'type': 'subscribe', 'symbol': 'BINANCE:BTCUSDT' }));
-        socket.send(JSON.stringify({ 'type': 'subscribe', 'symbol': 'IC MARKETS:1' }));
+app.post('/usBudget', (req, res) => {
+    var symbol = req.headers["symbol"];
+    console.log(symbol);
+    var date = new Date();
+    var fromDate = (date.getFullYear() - 1) + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+    var toDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+    console.log(symbol);
+    finnhubClient.stockUsaSpending(symbol, fromDate, toDate, (error, data, response) => {
+        res.send(data);
     });
-    // Listen for messages
-    socket.addEventListener('message', function (event) {
-        res.send(event.data);
-    });
-    // Unsubscribe
-    var unsubscribe = function (symbol) {
-        socket.send(JSON.stringify({ 'type': 'unsubscribe', 'symbol': symbol }));
-    };
 });
 // Server setup
 app.listen(PORT, () => {

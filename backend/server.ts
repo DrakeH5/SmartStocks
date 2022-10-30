@@ -86,6 +86,17 @@ app.post('/companyProfile', (req, res) => {
 }) 
 
 
+app.post('/usBudget', (req, res) => {
+    var symbol = req.headers["symbol"]
+    console.log(symbol)
+    var date = new Date()
+    var fromDate = (date.getFullYear()-1) + "-" + (date.getMonth()+1) + "-" + date.getDate(); 
+    var toDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate(); 
+    console.log(symbol)
+    finnhubClient.stockUsaSpending(symbol, fromDate, toDate, (error: any, data: any, response: any) => {
+        res.send(data);
+    });
+}) 
 
 
   
