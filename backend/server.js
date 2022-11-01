@@ -80,6 +80,13 @@ app.post('/usBudget', (req, res) => {
         res.send(data);
     });
 });
+app.post('/candlestick', (req, res) => {
+    var symbol = req.headers["symbol"];
+    console.log(symbol);
+    finnhubClient.stockCandles(symbol, "D", Math.floor(Date.now() / 1000) - 15778800, Math.floor(Date.now() / 1000), (error, data, response) => {
+        res.send(data);
+    });
+});
 // Server setup
 app.listen(PORT, () => {
     console.log('The application is listening '
