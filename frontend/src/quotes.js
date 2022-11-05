@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Line } from "react-chartjs-2";
+import ChartJS from "./quoteCandlestickChart.js"
 
 function Quotes() {
 
@@ -8,7 +8,7 @@ function Quotes() {
     useEffect(() => {
         fetch("/quote", {
             method: 'post',
-            headers: {'Content-Type':'application/json', "symbol":prompt("Symbol: ")},
+            headers: {'Content-Type':'application/json', "symbol":prompt("Symbol: ") }, 
         }).then(
           response => response.json()
         ).then(
@@ -34,18 +34,6 @@ function Quotes() {
             var color = "green"
         }
 
-        const data = {
-          labels: ["Old Price", "Current Price"],
-          datasets: [
-            {
-              label: "Change",
-              backgroundColor: "white",
-              borderColor: color,
-              data: [oldValue, quote["c"]],
-            },
-          ],
-        };
-
         return(
             <div style={{color: color}}>
                 <center>
@@ -67,7 +55,7 @@ function Quotes() {
                         </div>
                     </h3>
                 </center>
-                <Line data={data} />
+                <ChartJS/>
             </div>
         );
     };

@@ -102,7 +102,7 @@ app.post('/usBudget', (req, res) => {
 app.post('/candlestick', (req, res) => {
     var symbol = req.headers["symbol"]
     console.log(symbol)
-    finnhubClient.stockCandles(symbol, "D", Math.floor(Date.now() / 1000)-15778800, Math.floor(Date.now() / 1000), (error: any, data: any, response: any) => {
+    finnhubClient.stockCandles(symbol, "D", Math.floor(Date.now() / 1000)-7889400000, Math.floor(Date.now() / 1000), (error: any, data: any, response: any) => {
         res.send(data);
       });
 }) 
