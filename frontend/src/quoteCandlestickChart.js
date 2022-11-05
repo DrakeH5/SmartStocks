@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { scaleTime } from "d3-scale";
-import MadeData from "./Data";
 import { ChartCanvas, Chart } from "react-stockcharts";
 import { CandlestickSeries } from "react-stockcharts/lib/series";
 import { XAxis, YAxis } from "react-stockcharts/lib/axes";
